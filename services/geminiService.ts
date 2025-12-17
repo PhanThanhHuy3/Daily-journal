@@ -1,13 +1,11 @@
 import { GoogleGenAI } from "@google/genai";
 import { JournalEntry } from "../types";
 
-const GEMINI_API_KEY = process.env.API_KEY || '';
-
-// Initialize the client
-const ai = new GoogleGenAI({ apiKey: GEMINI_API_KEY });
+// Always use process.env.API_KEY directly for initialization
+const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
 
 export const generateReflection = async (entry: JournalEntry): Promise<string> => {
-  if (!GEMINI_API_KEY) {
+  if (!process.env.API_KEY) {
     return "AI insights are unavailable (API Key missing).";
   }
 
@@ -23,11 +21,12 @@ export const generateReflection = async (entry: JournalEntry): Promise<string> =
       Content: ${entry.content}
     `;
 
+    // Using the recommended model for basic text tasks
     const response = await ai.models.generateContent({
-      model: 'gemini-2.5-flash',
+      model: 'gemini-3-flash-preview',
       contents: prompt,
       config: {
-        thinkingConfig: { thinkingBudget: 0 } // Low latency preferred for this simple task
+        thinkingConfig: { thinkingBudget: 0 }
       }
     });
 
