@@ -10,9 +10,10 @@ Check out the live application here: **[dailyjournal1.netlify.app](https://daily
 ---
 
 ## 📸 Screenshots
-*(Add screenshots of your application here)*
 
-![App Screenshot](./images/screenshot.png)
+<img width="1919" height="871" alt="image" src="https://github.com/user-attachments/assets/39eed84f-546e-4b95-a525-e750e9c0db3a" />
+<img width="1917" height="873" alt="image" src="https://github.com/user-attachments/assets/ec58c7e1-9110-4f8a-8280-be6f549cea3f" />
+
 
 ---
 
